@@ -1,0 +1,61 @@
+
+
+
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    home
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  height: 100%;
+}
+</style>
+
+<body>
+<div class="container">
+    <div class="jumbotron">
+      <h1>Add University here :</h1>
+        <br><br>
+        <p>Example, title: <b>CUET</b> url:<b>https://www.cuet.ac.bd/</b></p>
+        <br>
+<form method="post" action="{% url 'addUniversity' %}">
+     {% csrf_token %}
+          <label for="title">Title:</label>
+          <input type="text" name="title" placeholder="title">
+<label for="urlLink">Full url:</label>
+          <input type="text" name="urlLink" placeholder="url">
+<input type="submit" name="" value="Add">
+</form>
+</div>
+  </div>
+</body>
+
+
+
+{% if messages %}
+{% for message in messages %}
+ {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+{% endfor %}
+
+{% endif %}
+
+
+{% endblock %}
+
+
+
+

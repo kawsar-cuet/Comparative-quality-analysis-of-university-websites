@@ -1,0 +1,131 @@
+<html lang="en">
+
+
+<!--custon css -->
+<style>
+.dtHorizontalExampleWrapper {
+max-width: 600px;
+margin: 0 auto;
+}
+#dtHorizontalExample th, td {
+white-space: nowrap;
+}
+
+
+</style>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<head>
+
+
+    {% load static %}
+    <! --CSS -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+
+    <title>
+        Methodology
+    </title>
+
+
+    <!-- Navbar page -->
+    {% include 'home/navbar.html' %}
+
+    {% block content %}
+    {% autoescape off %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Methodology of comparative analysis</h1>
+                <h2>we are evaluating a university website using the bellow factors:</h2>
+
+                <ul>
+                    <li>Contents of information (50% mark). The developed tool search the following information:</li>
+                    <ol>
+                        <li>University vision and mission or objective or goal</li>
+                        <li>University webmail or mail info</li>
+                        <li>University faculty info</li>
+                        <li> Administration info</li>
+                        <li> Workshop or seminar info</li>
+                        <li>Research information</li>
+                        <li> Information about Conference</li>
+                        <li> Information about publication</li>
+                        <li> Academic program</li>
+                        <li> Departments info</li>
+                        <li> Institutes info</li>
+                        <li> Information about career, job or field</li>
+                        <li> Information about accommodation or residence</li>
+                        <li> Info about transportation</li>
+                        <li>Information about library</li>
+                        <li> Online services ( online requisition, online course registration, online class, online
+                            application,
+                            online registration, online service, online admission, online learning, online exam )
+                        </li>
+                        <li> Notice board</li>
+                        <li> News and events
+                        <li> Information about Alumni</li>
+                        <li> Info about Convocation</li>
+                        <li> Info about student scholarship</li>
+                        <li> Information about IQAC</li>
+                        <li> Admission info</li>
+                        <li>Information about FAQ</li>
+                        <li> Academic information</li>
+                    </ol>
+                    <li>Performance of the website (40% marks). Determined using the following data:</li>
+                    <ol>
+                         <li>Connect start time</li>
+                         <li>Connect end time</li>
+                         <li>DomComplete time</li>
+                         <li>Dom content load-event start time</li>
+                         <li>Dom content load event end time</li>
+                         <li>Dom inter-active time</li>
+                         <li>Domain look-up end time</li>
+                         <li>Domain look-up start time</li>
+                         <li>Duration time</li>
+                         <li>Fetch start time</li>
+                         <li>Load event end time</li>
+                         <li>Load event start time</li>
+                         <li>Redirect end time</li>
+                         <li>Redirect start time</li>
+                         <li>Request start time</li>
+                         <li>Response start time</li>
+                         <li>Unload event end time</li>
+                         <li>Unload event start time</li>
+                         <li>Secure connection start time</li>
+                         <li>Worker start time</li>
+                    </ol>
+                    <li>Web page loading time (10% mark).</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    {% endautoescape %}
+    {% endblock %}
+
+
+    <!-- home js  -->
+    <!--- all js goes here --->
+    <script src="{% static 'js/main.js'%}"></script>
+
+
+    <!-- This is bootstrap js require for working collapsable button -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    </body>
+</html>
+
+

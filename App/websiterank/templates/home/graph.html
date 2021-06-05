@@ -1,0 +1,107 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    {% load static %}
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <! --CSS -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <!--custon css -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+    <title>
+        Ranking Chart
+
+    </title>
+</head>
+<body>
+    <!-- Navbar page -->
+    {% include 'home/navbar.html' %}
+
+    <!-- this block content extends in home.html this mean this is parent and inherited home.html named conent -->
+    {% block content %}
+    {% autoescape off %}
+    {{ plot_div }}
+    {% endautoescape %}
+    {% endblock %}
+
+    <!-- Detail view -->
+    <div class="col-md-12 text-center">
+        <button  onclick="location.href='{% url 'detail_data_view' %}'"  
+         style="background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;">Details</button>
+       
+    </div>
+
+    <!-- Footer -->
+<footer style="position: absolute;bottom: 0;width: 100%;height: 4.0rem;" class=" bg-dark text-white mt-5 p-0">
+
+    <!-- Footer Elements -->
+    <div class="container " style="width: 100%">
+  
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center">
+  
+        <!--Grid column-->
+        <div class="col-md-6">
+  
+          <!-- Video -->
+          <div class="embed-responsive embed-responsive-4by4 mb-2">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM"
+              allowfullscreen></iframe>
+          </div>
+  
+        </div>
+        <!--Grid column-->
+  
+      </div>
+      <!--Grid row-->
+  
+    </div>
+    <!-- Footer Elements -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+
+
+
+
+
+    <!-- home js  -->
+    <!--- all js goes here --->
+    <script src="{% static 'js/main.js'%}"></script>
+
+
+    <!-- This is bootstrap js require for working collapsable button -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+   
+
+
+</body>
+</html>

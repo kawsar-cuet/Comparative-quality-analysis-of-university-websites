@@ -1,0 +1,32 @@
+Webpage loading time : 0.31352972984313965
+Webpage loadevent time diff : 0.0
+Webpage Domainlookup time diff : 0.0
+Webpage domcontentloadevent time diff : 0.0
+Webpage Server connect time diff : 0.0
+Webpage Serverresponse time diff : 6.010000011883676
+Webpage Ridirect time diff : 0
+Connect start : 3.7949999095872045
+Connect end : 3.7949999095872045
+ decodedBodySize : 0
+domComplete : 256.98999990709126
+domContentLoadedEventEnd : 256.7649999400601
+domContentLoadedEventStart : 256.75499998033047
+domInteractive : 256.6899999510497
+domainLookupEnd : 3.7949999095872045
+domainLookupStart: 3.7949999095872045
+duration: 257.00499990489334
+encodedBodySize: 0
+entryType: navigation
+fetchStart: 3.7949999095872045
+loadEventEnd: 257.00499990489334
+loadEventStart: 257.00499990489334
+redirectCount: 0
+redirectEnd: 0
+redirectStart: 0
+requestStart: 3.7949999095872045
+responseStart: 3.7949999095872045
+secureConnectionStart: 0
+transferSize: 0
+unloadEventEnd: 0
+unloadEventStart: 0
+workerStart: 0

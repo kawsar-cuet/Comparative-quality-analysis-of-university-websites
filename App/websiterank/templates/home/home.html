@@ -1,0 +1,121 @@
+
+
+
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    home
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+<!-- container-fluid provide full width container-->
+<div class="container-fluid">
+        <div class="row">
+            <img src="{% static 'img/education.jpg'%}" style="width: 100%;height: 60vh" alt="My image">
+        </div>
+    </div>
+
+
+
+<!-- versity list container -->
+<div class="container">
+    <div class="row" id="versity_list">
+        <div class="col-md-12 text-center">
+        <h1 class="text-capitalize font-weight-bold ">Instant Rank</h1>
+
+        </div>
+        </div>
+   </div>
+
+
+
+ <!-- University sheckbox -->
+ 
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
+
+
+<form method="POST" action="{% url 'graph' %}">
+
+    <!--for sending data it is needed.-->
+
+              {% csrf_token %}
+          {% for key, value in universityList.items %}
+       <input type='checkbox' name='keyValue' value={{key}} />
+       <span style="width:100px;display:inline-block;">{{key}}</span>
+        {% endfor %}
+
+          
+
+
+   <div class="col-md-12 text-center">
+       <input type="submit" name="action" value="Show Rank" class="btn btn-primary btn-lg ">
+   </div>
+
+
+    
+  
+
+
+</form>
+
+
+   
+<!-- Update Database -->
+<div class="container">
+    <div class="row" id="up_db">
+        <div class="col-md-12 text-center">
+        <h1 class="text-capitalize font-weight-bold ">Update Database</h1>
+
+        </div>
+        </div>
+   </div>
+<!--{% for key, value in universityList.items %}-->
+<!--    {{ value }}-->
+<!--{% endfor %}-->
+    
+
+
+   <form method="POST" action="{% url 'update_db' %}">
+
+    <!--for sending data it is needed.-->
+
+              {% csrf_token %}
+         {% for key, value in universityList.items %}
+       <input type='checkbox' name='keyValue' value={{key}} />
+       <span style="width:100px;display:inline-block;">{{key}}</span>
+        {% endfor %}
+
+          
+
+
+   <div class="col-md-12 text-center">
+       <input type="submit" name="action" value="Update Database" class="btn btn-primary btn-lg ">
+   </div>
+
+</form>
+
+{% if messages %}
+{% for message in messages %}
+ {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+{% endfor %}
+
+{% endif %}
+
+
+{% endblock %}
+
+ 
+
+

@@ -1,0 +1,135 @@
+<html lang="en">
+
+
+<!--custon css -->
+<style>
+.dtHorizontalExampleWrapper {
+max-width: 600px;
+margin: 0 auto;
+}
+#dtHorizontalExample th, td {
+white-space: nowrap;
+}
+</style>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<head>
+
+
+    {% load static %}
+    <! --CSS -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+
+    <title>
+        Detail vieww
+
+    </title>
+
+
+    <!-- Navbar page -->
+    {% include 'home/navbar.html' %}
+
+    {% block content %}
+    {% autoescape off %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Details View of Rank</h1>
+                <div class="table-responsive">
+                    <table id="mytable"  id="dtHorizontalExample" class="table table-striped table-bordered table-sm" cellspacing="0"
+  width="100%">
+                        <thead>
+                        <th>University Name</th>
+                         <th>Connect start time</th>
+                         <th>Connect end time</th>
+                         <th>DomComplete time</th>
+                         <th>Dom content load-event start time</th>
+                         <th>Dom content load event end time</th>
+                         <th>Dom inter-active time</th>
+                         <th>Domain look-up end time</th>
+                         <th>Domain look-up start time</th>
+                         <th>Duration time</th>
+                         <th>Fetch start time</th>
+                         <th>Load event end time</th>
+                         <th>Load event start time</th>
+                         <th>Redirect end time</th>
+                         <th>Redirect start time</th>
+                         <th>Request start time</th>
+                         <th>Response start time</th>
+                         <th>Unload event end time</th>
+                         <th>Unload event start time</th>
+                         <th>Secure connection start time</th>
+                         <th>Worker start time</th>
+                        <th>Contents of Information</th>
+                        <th>Load time</th>
+                        <th>Marks of Contents</th>
+                        <th>Marks of Performance</th>
+                        <th>Marks of LoadTime</th>
+                        </thead>
+                        <tbody>
+                        {% for i in performData %}
+                        <tr>
+                            <td>{{i.versityName}}</td>
+                            <td>{{i.connect_start}}</td>
+                             <td>{{i.connect_end}}</td>
+                             <td>{{i.domComplete}}</td>
+                             <td>{{i.domContentLoadEventStart}}</td>
+                             <td>{{i.domContentLoadEventEnd}}</td>
+                             <td>{{i.domInterActive}}</td>
+                             <td>{{i.domainLookUpEnd}}</td>
+                             <td>{{i.domainLookUpStart}}</td>
+                             <td>{{i.duration}}</td>
+                             <td>{{i.fetchStart}}</td>
+                             <td>{{i.loadEventEnd}}</td>
+                             <td>{{i.loadEventStart}}</td>
+                             <td>{{i.redirectEnd}}</td>
+                             <td>{{i.redirectStart}}</td>
+                             <td>{{i.request_start}}</td>
+                             <td>{{i.response_start}}</td>
+                             <td>{{i.unloadEventEnd}}</td>
+                             <td>{{i.unloadEventStart}}</td>
+                             <td>{{i.secureConnectionStart}}</td>
+                             <td>{{i.workerStart}}</td>
+                            <td>{{i.contents}}</td>
+                            <td>{{i.loadTime}}</td>
+                            <td>{{i.markContent}}</td>
+                            <td>{{i.markPerformance}}</td>
+                            <td>{{i.markLoadTime}}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% endautoescape %}
+    {% endblock %}
+
+
+    <!-- home js  -->
+    <!--- all js goes here --->
+    <script src="{% static 'js/main.js'%}"></script>
+
+
+    <!-- This is bootstrap js require for working collapsable button -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    </body>
+</html>
+
+

@@ -1,0 +1,35 @@
+
+def faculty_info(webdriver3,url):
+    with webdriver3 as driver:
+        # Set timeout time 
+        wait = WebDriverWait(driver, 20)
+
+        # retrive url in headless browser
+        driver.get(url)
+        html_source = driver.page_source
+
+
+        soup = BeautifulSoup(html_source)
+
+        # kill all script and style elements
+        for script in soup(["script", "style"]):
+            script.extract()    # rip it out
+
+        # get text
+        text = soup.get_text()
+
+        # break into lines and remove leading and trailing space on each
+        lines = (line.strip() for line in text.splitlines())
+        # break multi-headlines into a line each
+        chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+        # drop blank lines
+        text = '\n'.join(chunk for chunk in chunks if chunk)
+
+        with open('./faculty_asset/faculty.txt','a',encoding="utf-8")as f: 
+            f.write(text)
+            
+
+        f.close()
+        print(text)
+
+
